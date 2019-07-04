@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Customers</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Customers</h2>
+
+    <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+           {{#each results}}
+              <tr>
+                <td>{{ id }}</td>
+                <td>{{ full_name }}</td>
+                <td>{{ email }}</td>
+                <td>{{ item }}</td>
+                <td>{{ quantity }}</td>
+                <td>{{ total_price }}</td>
+              </tr>
+           {{/each}}
+        </tbody>
+      </table>
+
+      <a href="/pivot" class="btn btn-primary">PIVOT</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script language="javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

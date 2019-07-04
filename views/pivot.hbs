@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Customers</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Pivot Customers</h2>
+
+    <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Barang1</th>
+            <th>Barang2</th>
+            <th>Barang3</th>
+            <th>Barang4</th>
+            <th>Barang5</th>
+            <th>Barang6</th>
+            <th>Barang7</th>
+            <th>Barang8</th>
+            <th>Barang9</th>
+            <th>Barang10</th>
+
+          </tr>
+        </thead>
+        <tbody>
+           {{#each results}}
+              <tr>
+                <td>{{ full_name }}</td>
+                <td>{{ email }}</td>
+                <td>{{ barang1 }}</td>
+                <td>{{ barang2 }}</td>
+                <td>{{ barang3 }}</td>
+                <td>{{ barang4 }}</td>
+                <td>{{ barang5 }}</td>
+                <td>{{ barang6 }}</td>
+                <td>{{ barang7 }}</td>
+                <td>{{ barang8 }}</td>
+                <td>{{ barang9 }}</td>
+                <td>{{ barang10 }}</td>
+              </tr>
+           {{/each}}
+        </tbody>
+      </table>
+
+      <a href="/" class="btn btn-primary">BACK</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script language="javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
