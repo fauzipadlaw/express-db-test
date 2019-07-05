@@ -3,7 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const app = express()
 
@@ -21,11 +20,9 @@ connection.connect((err) =>{
   console.log('Mysql Connected...')
 });
 
-//set views directory, view engine, body parser, add static dir for bootstrap
+//set views directory, view engine, add static dir for bootstrap
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine', 'hbs')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'))
 hbs.registerHelper('json', function(context) {
   return JSON.stringify(context);
@@ -37,7 +34,6 @@ app.get('/',(req, res) => {
     if(err) throw err;
     res.render('index',{
       results: results,
-      string_results: JSON.stringify(results)
     });
   });
 });
@@ -59,12 +55,11 @@ app.get('/pivot',(req, res) => {
     if(err) throw err;
     res.render('pivot',{
       results: results,
-      string_results: JSON.stringify(results)
     });
   });
 });
 
 // start server
-app.listen(3333, () => {
+module.exports = app.listen(3333, () => {
   console.log('Server is running on port 3333');
 });
